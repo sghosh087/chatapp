@@ -1,0 +1,14 @@
+.chatArea {
+    height: 60vh; border: 1px solid gray; overflow:auto
+}
+
+.userArea {
+    height: 60vh; border: 1px solid gray; overflow-y: auto;
+}
+
+.msgDiv {
+    border: 1px solid lightgray;
+    padding: 10px;
+    box-shadow: 2px 2px #888888;
+    border-radius: 5px;
+}

@@ -1,0 +1,18 @@
+<div class="row">
+    <div class="col-sm-2 userArea">
+    <div *ngFor="let user of userList">
+              <span><i class="fas fa-smile"></i> {{ user.userName }} </span>
+    </div>
+    </div>
+    <div class="col-sm-10 chatArea" #chatArea>
+
+    </div>
+</div>
+<div class="row mb-3">
+    <div class="col-sm-11 mt-3">
+        <input type="text" class="form-control" [(ngModel)]="message" (keydown)="sendMessage($event)">
+    </div>
+    <div class="col-sm-1 mt-3">
+        <button type="button" style="margin-right: 0;" class="btn btn-primary" (click)="sendMessage($event)" [disabled]="!message">Send</button>
+    </div>
+</div>

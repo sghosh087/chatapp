@@ -1,0 +1,22 @@
+<div class="container">
+    <h2>Login</h2>
+    <div class="row">
+        <div class="col-sm-12">
+            <div class="alert alert-danger" *ngIf="loginError">{{ loginError }}</div>
+        </div>
+        <div class="col-sm-6">
+            <form (ngSubmit)="onLogin()" #loginFrm="ngForm">
+                <div class="mb-3">
+                    <input type="email" ngModel required name="email" #email="ngModel" class="form-control">
+                    <span class="text-danger" *ngIf="!email.valid && email.touched">Email is required</span>
+                </div>
+                <div class="mb-3">
+                    <input type="password" ngModel required name="password" #password="ngModel" class="form-control">
+                    <span class="text-danger" *ngIf="!password.valid && password.touched">Password is required</span>
+                </div>
+                <button type="submit" class="btn btn-primary" [disabled]="loginFrm.invalid">Login</button>
+                <p class="mt-3">Not registered? click <a [routerLink]="['/registration']">here</a> to register</p>
+            </form>
+        </div>
+    </div>
+</div>
