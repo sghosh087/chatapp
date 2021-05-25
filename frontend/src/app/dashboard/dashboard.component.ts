@@ -35,6 +35,9 @@ export class DashboardComponent implements OnInit {
                     })
                     if (index == -1) {
                         this.userList.push({ id: data.id, userName: data.userName });
+                        const msgDiv = document.createElement('div');
+                        msgDiv.innerHTML = `<i><strong>${data.userName}</strong> has joined the chat</i>`;
+                        this.chatArea.nativeElement.append(msgDiv);
                     }
                 }
             }
@@ -59,7 +62,7 @@ export class DashboardComponent implements OnInit {
                         this.userList.splice(index,1);
                     }
                     const msgDiv = document.createElement('div');
-                    msgDiv.innerHTML = `<i>${user[0].userName}</i> has left the chat`;
+                    msgDiv.innerHTML = `<i><strong>${user[0].userName}</strong> has left the chat</i>`;
                     this.chatArea.nativeElement.append(msgDiv);
                 }
             })
